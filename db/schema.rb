@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_21_214451) do
-
-  create_table "destinations", force: :cascade do |t|
-    t.string "location"
-    t.string "image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.date "fromdate"
-    t.date "todate"
+ActiveRecord::Schema.define(version: 20_211_221_214_451) do
+  create_table 'destinations', force: :cascade do |t|
+    t.string 'location'
+    t.string 'image'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.date 'fromdate'
+    t.date 'todate'
   end
-
 end

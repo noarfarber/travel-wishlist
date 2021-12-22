@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
-  before_action :set_destination, only: %i[ show edit update destroy ]
+  before_action :set_destination, only: %i( show edit update destroy )
 
   # GET /destinations or /destinations.json
   def index
@@ -26,7 +26,7 @@ class DestinationsController < ApplicationController
 
     respond_to do |format|
       if @destination.save
-        format.html { redirect_to destination_url(@destination), notice: "Destination was successfully created." }
+        format.html { redirect_to destination_url(@destination), notice: 'Destination was successfully created.' }
         format.json { render :show, status: :created, location: @destination }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class DestinationsController < ApplicationController
   def update
     respond_to do |format|
       if @destination.update(destination_params)
-        format.html { redirect_to destination_url(@destination), notice: "Destination was successfully updated." }
+        format.html { redirect_to destination_url(@destination), notice: 'Destination was successfully updated.' }
         format.json { render :show, status: :ok, location: @destination }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,19 +53,20 @@ class DestinationsController < ApplicationController
     @destination.destroy
 
     respond_to do |format|
-      format.html { redirect_to destinations_url, notice: "Destination was successfully destroyed." }
+      format.html { redirect_to destinations_url, notice: 'Destination was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_destination
-      @destination = Destination.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def destination_params
-      params.require(:destination).permit(:location, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_destination
+    @destination = Destination.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def destination_params
+    params.require(:destination).permit(:location, :image)
+  end
 end
