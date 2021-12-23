@@ -14,24 +14,12 @@
   <div>
     <%= form.label :location, style: "display: block" %>
     <%= form.text_field :location %>
-  </div>
-
-  <div>
     <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image %>
-  </div>
-
-  <div>
+    <%= form.file_field :image %>
     <%= form.label :fromdate, style: "display: block" %>
     <%= form.text_field :fromdate %>
-  </div>
-
-  <div>
     <%= form.label :todate, style: "display: block" %>
     <%= form.text_field :todate %>
-  </div>
-
-  <div>
     <%= form.submit %>
   </div>
 <% end %>

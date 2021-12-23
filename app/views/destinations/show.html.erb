@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= @destination.location %></h1>
-<p><%= @destination.image %></p>
-<p><%= @destination.fromdate %></p>
-<p><%= @destination.todate %></p>
-<br/>
+  <h1><%= @destination.location %></h1>
+  <%= image_tag @destination.image %>
+  <br/>
+  <p><%= @destination.fromdate %></p>
+  <p><%= @destination.todate %></p>
+
 <div>
   <%= link_to "Edit this destination", edit_destination_path(@destination) %> |
   <%= link_to "Back to destinations", destinations_path %>
