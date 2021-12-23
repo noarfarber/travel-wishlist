@@ -22,6 +22,16 @@
   </div>
 
   <div>
+    <%= form.label :fromdate, style: "display: block" %>
+    <%= form.text_field :fromdate %>
+  </div>
+
+  <div>
+    <%= form.label :todate, style: "display: block" %>
+    <%= form.text_field :todate %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
