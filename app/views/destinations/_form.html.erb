@@ -11,15 +11,28 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="form-group">
     <%= form.label :location, style: "display: block" %>
-    <%= form.text_field :location %>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.file_field :image %>
-    <%= form.label :fromdate, style: "display: block" %>
-    <%= form.text_field :fromdate %>
-    <%= form.label :todate, style: "display: block" %>
-    <%= form.text_field :todate %>
-    <%= form.submit %>
+    <%= form.text_field :location, class: "form-control" %>
   </div>
+
+  <div class="form-group">
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :image, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fromdate, style: "display: block" %>
+    <%= form.text_field :fromdate, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :todate, style: "display: block" %>
+    <%= form.text_field :todate, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+
 <% end %>

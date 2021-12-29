@@ -5,8 +5,9 @@ feature 'Shows a picture of destination' do
     visit '/destinations'
     click_link 'New destination'
     fill_in 'Location', with: 'Paris'
-    attach_file 'Image', '/images/something_img.png'
+    attach_file 'Image', '/Users/noafarber/Projects/travel-wishlist/spec/features/images/something_img.png'
     click_button 'Create Destination'
+    visit '/destinations/1'
     expect(page).to have_css("img[src*='something_img.png']")
   end
 end
