@@ -12,17 +12,19 @@
 </head>
 <body>
   <div class="container-fluid">
-    <div class="thumbnail">
-     
-        <% @destinations.each do |destination| %>
-          <li><%= link_to destination.location, destination %></li>
+    <div class="row">
+      <% @destinations.each do |destination| %>
+        <div class="col-4">
+          <div class="thumbnail">
+          <%= link_to destination.location, destination %>
           <% if destination.image.attached? %>
             <%= image_tag destination.image %>
           <% else %>
             <%= image_tag "default_picture.jpeg" %>
           <% end %>
-        <% end %>
-      
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </body>
