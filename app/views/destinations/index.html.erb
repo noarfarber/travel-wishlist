@@ -1,14 +1,31 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Destinations</h1>
-
-<ul>
-  <% @destinations.each do |destination| %>
-    <li>
-      <%= link_to destination.location, destination %>
-    </li>
-  <% end %>
-</ul>
-<br/><br/><br/><br/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Destinations List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <p style="color: green"><%= notice %></p>
+  <h1>Destinations</h1>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="thumbnail">
+     
+        <% @destinations.each do |destination| %>
+          <li><%= link_to destination.location, destination %></li>
+          <% if destination.image.attached? %>
+            <%= image_tag destination.image %>
+          <% else %>
+            <%= image_tag "default_picture.jpeg" %>
+          <% end %>
+        <% end %>
+      
+    </div>
+  </div>
+</body>
+</html>
 
 <%= link_to "New destination", new_destination_path %>

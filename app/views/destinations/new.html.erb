@@ -1,9 +1,17 @@
-<h1>New Trip</h1>
-
-<%= render "form", destination: @destination %>
-
-<br>
-
-<div>
-  <%= link_to "Back to destinations", destinations_path %>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Trip</title>
+  <h1>New Trip</h1>
+</head>
+<body>
+  <%= render "form", destination: @destination %>
+  <div>
+    <br>
+    <%= link_to "Back to destinations", destinations_path %>
+  </div>
+</body>
+</html>
