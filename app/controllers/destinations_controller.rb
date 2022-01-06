@@ -1,26 +1,21 @@
 class DestinationsController < ApplicationController
   before_action :set_destination, only: %i( show edit update destroy )
 
-  # GET /destinations or /destinations.json
   def index
     @destinations = Destination.all.order(created_at: :desc)
   end
 
-  # GET /destinations/1 or /destinations/1.json
   def show
     @destination = Destination.find(params[:id])
   end
 
-  # GET /destinations/new
   def new
     @destination = Destination.new
   end
 
-  # GET /destinations/1/edit
   def edit
   end
 
-  # POST /destinations or /destinations.json
   def create
     @destination = Destination.new(destination_params)
 
@@ -35,7 +30,6 @@ class DestinationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /destinations/1 or /destinations/1.json
   def update
     respond_to do |format|
       if @destination.update(destination_params)
@@ -48,7 +42,6 @@ class DestinationsController < ApplicationController
     end
   end
 
-  # DELETE /destinations/1 or /destinations/1.json
   def destroy
     @destination.destroy
 
@@ -60,12 +53,10 @@ class DestinationsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_destination
     @destination = Destination.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def destination_params
     params.require(:destination).permit(:location, :image, :fromdate, :todate)
   end
