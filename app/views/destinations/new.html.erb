@@ -9,9 +9,6 @@
 </head>
 <body>
   <%= render "form", destination: @destination %>
-  <div>
-    <br>
-    <%= link_to "Back to destinations", destinations_path %>
-  </div>
+  <%= link_to "Back to destinations", destinations_path, class: "btn btn-primary" %>
 </body>
 </html>

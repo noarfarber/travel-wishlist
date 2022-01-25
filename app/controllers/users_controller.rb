@@ -5,12 +5,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     redirect_to destinations_url
+    flash[:notice] = "You have created your account, #{@user.username}"
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :email, :password_digest)
+    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
   end
 end

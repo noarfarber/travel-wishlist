@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <h1>Destinations</h1>
-  <h3>Hey User</h3>
+  <h2>Destinations</h2>
+  <%= "Hey User" %>
 </head>
 <body>
+<%= link_to "New destination", new_destination_path, class: "btn btn-primary" %>
   <div class="container-fluid">
     <div class="row">
       <% @destinations.each do |destination| %>
@@ -29,5 +30,3 @@
   </div>
 </body>
 </html>
-
-<%= link_to "New destination", new_destination_path %>

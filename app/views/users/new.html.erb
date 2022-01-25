@@ -1,6 +1,7 @@
 <h1>Sign Up</h1>
 
 <%= form_with(model: @user) do |form| %>
+  
   <div class="mb-3">
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name, class: "form-control" %>
